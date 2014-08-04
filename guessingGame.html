@@ -1,0 +1,15 @@
+<script>
+	var guess, guessed;
+	var answer = ['japan', 'korea', 'vietnam', 'indonesia', 'canada'];
+	var correct = []
+
+	guess = prompt("I have been to five foreign countries. Try to name one of them.");
+
+	if(answer.indexOf(guess) > -1) {
+		correct.push(guess);
+		alert(guess + " is correct!");
+	}
+	else {
+		alert("Sorry, I have never been there.");
+	}
+</script>
