@@ -9,3 +9,7 @@
 ####Additional Features:
 - The game loops until the user gets all the countries correctly or until user cancels.
 - Game keeps track of correct guesses and informs the user of his/her previous guesses.
+
+####Thanks to the following people for helping me unstuck myself:
+- Vincent
+- Brook
