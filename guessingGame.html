@@ -4,25 +4,35 @@
 	var correct = [];
 
 	while ((guess !== null) && (correct.length < answer.length)) {
-		guess = prompt("I have been to five foreign countries. Try to name one of them.");
-		if((answer.indexOf(guess) > -1) && !(correct.indexOf(guess) > -1)) {
+		guess = prompt("I have been to " + answer.length + " foreign countries. Try to name one of them.");
+
+		// Prompt user to input a guess.
+		if((answer.indexOf(guess.toLowerCase()) > -1) && !(correct.indexOf(guess.toLowerCase()) > -1)) {
 			correct.push(guess);
-			alert(guess + " is correct! You have made " + correct.length + " correct answer(s) out of a total of 5");
+			alert(guess + " is correct! You have made " + correct.length + " correct answer(s) out of a total of " + answer.length);
 			if((correct.length > 1) && (correct.length < answer.length)) {
 				alert("You're not done yet, keep guessing! These are the correct answers you have already made: " + correct.join(", ") +".");
 			};
 		}
+
+		// if user makes a guess that has already been found to be correct previously.
 		else if (correct.indexOf(guess) > -1) {
 			alert("You already guessed " + guess + ".")
 		}
+
+		// if user's guess is incorrect.
 		else if (guess !== null) {
 			alert("Sorry, I have never been there.");
 		}
+
+		// if user clicks cancel.
 		else if (guess === null) {
 			alert("Goodbye!")
 		}
+
+		// if user finishes the game with all answers.
 		else {
-			alert("You got all five correct! Good Job!!!")
+			alert("You got all " + answer.length + " correct! Good Job!!!")
 		}
 	}
 </script>
