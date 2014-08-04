@@ -4,7 +4,7 @@
 	var correct = [];
 
 	while ((guess !== null) && (correct.length < answer.length)) {
-		guess = prompt("I have been to " + answer.length + " foreign countries. Try to name one of them.");
+		guess = prompt("I have been to " + answer.length + " foreign countries. Try to name them. One guess at a time!");
 
 		// Prompt user to input a guess.
 		if((answer.indexOf(guess.toLowerCase()) > -1) && !(correct.indexOf(guess.toLowerCase()) > -1)) {
