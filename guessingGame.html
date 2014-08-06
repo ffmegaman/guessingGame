@@ -2,37 +2,38 @@
 	var guess;
 	var answer = ['japan', 'korea', 'vietnam', 'indonesia', 'canada'];
 	var correct = [];
+	var numCorrect = 0;
+	var numAnswer = answer.length;
 
-	while ((guess !== null) && (correct.length < answer.length)) {
-		guess = prompt("I have been to " + answer.length + " foreign countries. Try to name them. One guess at a time!");
+	while ((guess !== null) && (numCorrect < numAnswer)) {
+		guess = prompt("I have been to " + numAnswer + " foreign countries. Try to name them. One guess at a time!");
 
 		// Prompt user to input a guess.
 		if((answer.indexOf(guess.toLowerCase()) > -1) && !(correct.indexOf(guess.toLowerCase()) > -1)) {
 			correct.push(guess);
-			alert(guess + " is correct! You have made " + correct.length + " correct answer(s) out of a total of " + answer.length);
-			if((correct.length > 1) && (correct.length < answer.length)) {
+			numCorrect++;
+			alert(guess + " is correct! You have made " + numCorrect + " correct answer(s) out of a total of " + numAnswer);
+			if((numCorrect > 1) && (numCorrect < numAnswer)) {
 				alert("You're not done yet, keep guessing! These are the correct answers you have already made: " + correct.join(", ") +".");
 			};
 		}
 
-		// if user makes a guess that has already been found to be correct previously.
+		// if user makes a guess that has already been found to be correct previously
 		else if (correct.indexOf(guess) > -1) {
 			alert("You already guessed " + guess + ".");
 		}
 
-		// if user's guess is incorrect.
+		// if user's guess is incorrect
 		else if (guess !== null) {
 			alert("Sorry, I have never been there.");
 		}
 
-		// if user clicks cancel.
+		// if user clicks cancel
 		else if (guess === null) {
 			alert("Goodbye!");
 		}
-
-		// if user finishes the game with all answers.
-		else {
-			alert("You got all " + answer.length + " correct! Good Job!!!");
-		}
 	}
+	//Congratulations window
+	alert("You got all " + numAnswer
+	 + " correct! Good Job!!!");
 </script>
